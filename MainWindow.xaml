@@ -1,0 +1,50 @@
+﻿<Window x:Class="ITTSGM.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ITTSGM"
+        mc:Ignorable="d"
+        Title="It Takes Two - Save Game Manager" Height="369.074" Width="450.546" Background="#FF292929" ResizeMode="CanMinimize">
+    <Grid>
+        <Button x:Name="refreshBtn" Content="Refresh" HorizontalAlignment="Left" Height="27" Margin="287,23,0,0" VerticalAlignment="Top" Width="131" FontSize="16" Background="#FF666666" Foreground="White" BorderBrush="#FF040404" Click="RefreshBtn_Click"/>
+        <Button x:Name="unlockChapters" HorizontalAlignment="Left" Height="65" Margin="287,205,0,0" VerticalAlignment="Top" Width="131" FontSize="16" Background="#FF666666" Foreground="White" BorderBrush="#FF040404" Click="UnlockChaptersBtn_Click">
+            <TextBlock TextWrapping="Wrap" Text="Unlock All Chapters" TextAlignment="Center"/>
+        </Button>
+        <StackPanel HorizontalAlignment="Left" Height="256" Margin="10,74,0,0" VerticalAlignment="Top" Width="136">
+            <CheckBox x:Name="whack" Content="Whack-a-Cody" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="100" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
+            <CheckBox x:Name="flip" Content="Flip the Switch" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="100" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
+            <CheckBox x:Name="tug" Content="Tug of War" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="100" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
+            <CheckBox x:Name="plunger" Content="Plunger Dunger" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="115" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
+            <CheckBox x:Name="tank" Content="Tank Brothers" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="100" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
+            <CheckBox x:Name="laser" Content="Laser Tennis" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="100" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
+            <CheckBox x:Name="space" Content="Spacewalk" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="100" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
+            <CheckBox x:Name="batting" Content="Batting Team" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="100" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
+            <CheckBox x:Name="feed" Content="Feed the Reptile" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="115" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
+            <CheckBox x:Name="rodeo" Content="Rodeo" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="100" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
+
+        </StackPanel>
+        <Label Content="Minigames" HorizontalAlignment="Left" Height="60" Margin="16,4,0,0" VerticalAlignment="Top" Width="186" FontSize="35" Foreground="White"/>
+        <StackPanel HorizontalAlignment="Left" Height="256" Margin="146,74,0,0" VerticalAlignment="Top" Width="136">
+            <CheckBox x:Name="birdstar" Content="Birdstar" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="100" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
+            <CheckBox x:Name="bomb" Content="Bomb Run" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="100" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
+            <CheckBox x:Name="horse" Content="Horse Derby" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="100" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
+            <CheckBox x:Name="snow" Content="Snow Warfare" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="100" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
+            <CheckBox x:Name="shuffle" Content="Shuffle Board" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="100" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
+            <CheckBox x:Name="icicle" Content="Icicle Throwing" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="100" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
+            <CheckBox x:Name="ice" Content="Ice Race" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="115" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
+            <CheckBox x:Name="larva" Content="Larva Basket" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="100" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
+            <CheckBox x:Name="garden" Content="Garden Swings" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="100" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
+            <CheckBox x:Name="snail" Content="Snail Race" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="100" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="131" Margin="282,74,0,0" VerticalAlignment="Top" Width="136">
+            <CheckBox x:Name="musical" Content="Musical Chairs" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="100" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
+            <CheckBox x:Name="track" Content="Track Runner" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="115" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
+            <CheckBox x:Name="slotcars" Content="Slotcars" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="100" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
+            <CheckBox x:Name="chess" Content="Chess" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="100" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
+            <CheckBox x:Name="volleyball" Content="Volleyball" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="100" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
+        </StackPanel>
+        <Button x:Name="saveBtn" Content="Save" HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="131" FontSize="16" Background="#FF666666" Foreground="White" BorderBrush="#FF040404" Click="SaveBtn_Click" Margin="287,285,0,0"/>
+
+    </Grid>
+</Window>
