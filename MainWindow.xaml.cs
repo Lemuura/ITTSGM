@@ -44,12 +44,6 @@ namespace ITTSGM
                 saveLines = File.ReadAllLines(@"SaveData.Nuts");
                 saveLinesList = saveLines.ToList();
 
-                string friends = "	\"FriendsPassInfoShown\": \"True\",";
-                if (!saveLinesList.Contains(friends))
-                {
-                    saveLinesList.Insert(3, friends);
-                }
-
                 checkMinigames();
 
                 Console.WriteLine("Contents of SaveData.Nuts = ");
@@ -62,33 +56,24 @@ namespace ITTSGM
 
         private void WriteToFile()
         {
-            saveLinesList.RemoveRange(7, saveLinesList.Count - 7);
+            saveLinesList.Clear();
+            saveLinesList.Add("{");
+            saveLinesList.Add("	\"EULA_Accepted\": \"true\",");
+            saveLinesList.Add("	\"UID\": \"00000\","); // UID number doesn't seem to matter?
+            saveLinesList.Add("	\"FriendsPassInfoShown\": \"True\",");
+            saveLinesList.Add("	\"FurthestUnlockedChapter\": \"/Game/Maps/Music/Ending/Music_Ending_BP##EndingIntro\",");
+            saveLinesList.Add("	\"LastSaveProgressPoint\": \"/Game/Maps/Shed/Awakening/Awakening_BP##Awakening_Start\",");
+            saveLinesList.Add("	\"LastSaveChapter\": \"/Game/Maps/Shed/Awakening/Awakening_BP##Awakening_Start\",");
             WriteMinigames();
-            string lastLine = saveLinesList[saveLinesList.Count - 1].TrimEnd(',');
+
+            string lastLine = saveLinesList[saveLinesList.Count - 1].TrimEnd(','); // Removes the comma at the end of the file
             saveLinesList.RemoveAt(saveLinesList.Count - 1);
             saveLinesList.Add(lastLine);
             saveLinesList.Add("}");
             saveLines = saveLinesList.ToArray();
-            System.IO.File.WriteAllLines(@"SaveData.Nuts", saveLines);
+            File.WriteAllLines(@"SaveData.Nuts", saveLines);
         }
 
-        private void UnlockChaptersBtn_Click(object sender, RoutedEventArgs e)
-        {
-            if (!File.Exists(@"SaveData.Nuts"))
-            {
-                MessageBox.Show("Save file can't be located. Has it been moved or deleted?", "File not found");
-                return;
-            }
-
-            else
-            {
-                string stringToCheck = "	\"FurthestUnlockedChapter\": \"/Game/Maps/Music/Ending/Music_Ending_BP##EndingIntro\",";
-                if (!saveLinesList.Contains(stringToCheck))
-                {
-                    saveLinesList[4] = stringToCheck;
-                }
-            }
-        }
         private void RefreshBtn_Click(object sender, RoutedEventArgs e)
         {
             ReadSaveFile();

@@ -8,9 +8,6 @@
         Title="It Takes Two - Save Game Manager" Height="369.074" Width="450.546" Background="#FF292929" ResizeMode="CanMinimize">
     <Grid>
         <Button x:Name="refreshBtn" Content="Refresh" HorizontalAlignment="Left" Height="27" Margin="287,23,0,0" VerticalAlignment="Top" Width="131" FontSize="16" Background="#FF666666" Foreground="White" BorderBrush="#FF040404" Click="RefreshBtn_Click"/>
-        <Button x:Name="unlockChapters" HorizontalAlignment="Left" Height="65" Margin="287,205,0,0" VerticalAlignment="Top" Width="131" FontSize="16" Background="#FF666666" Foreground="White" BorderBrush="#FF040404" Click="UnlockChaptersBtn_Click">
-            <TextBlock TextWrapping="Wrap" Text="Unlock All Chapters" TextAlignment="Center"/>
-        </Button>
         <StackPanel HorizontalAlignment="Left" Height="256" Margin="10,74,0,0" VerticalAlignment="Top" Width="136">
             <CheckBox x:Name="whack" Content="Whack-a-Cody" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="100" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
             <CheckBox x:Name="flip" Content="Flip the Switch" HorizontalAlignment="Left" Height="25" Margin="10,0,0,0" Width="100" FontSize="12"  Foreground="White" BorderBrush="#FF040404" />
