@@ -24,6 +24,8 @@ namespace ITTSGM
         private List<string> saveLinesList = new List<string>();
         private string[] saveLines;
 
+        string saveData = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\ItTakesTwo\\SaveData.Nuts";
+
         public MainWindow()
         {
             InitializeComponent();
@@ -32,7 +34,7 @@ namespace ITTSGM
 
         private void ReadSaveFile()
         {
-            if (!File.Exists(@"SaveData.Nuts"))
+            if (!File.Exists(saveData))
             {
                 MessageBox.Show("Save file can't be located. Has it been moved or deleted?", "File not found");
                 return;
@@ -41,7 +43,7 @@ namespace ITTSGM
             else
             {
 
-                saveLines = File.ReadAllLines(@"SaveData.Nuts");
+                saveLines = File.ReadAllLines(saveData);
                 saveLinesList = saveLines.ToList();
 
                 checkMinigames();
@@ -71,7 +73,7 @@ namespace ITTSGM
             saveLinesList.Add(lastLine);
             saveLinesList.Add("}");
             saveLines = saveLinesList.ToArray();
-            File.WriteAllLines(@"SaveData.Nuts", saveLines);
+            File.WriteAllLines(saveData, saveLines);
         }
 
         private void RefreshBtn_Click(object sender, RoutedEventArgs e)
@@ -81,7 +83,7 @@ namespace ITTSGM
 
         private void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (!File.Exists(@"SaveData.Nuts"))
+            if (!File.Exists(saveData))
             {
                 MessageBox.Show("Save file can't be located. Has it been moved or deleted?", "File not found");
                 return;
